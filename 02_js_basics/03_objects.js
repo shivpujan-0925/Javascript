@@ -21,7 +21,7 @@ const JsUser = {
 // console.log(JsUser[mySym]);
 
 JsUser.email = "radhe@chatgpt.com"
-// Object.freeze(JsUser)
+// Object.freeze(JsUser)        //after freez the object, can't change anything in Onjects.
 JsUser.email = "radhe@gmail.com"
 // console.log(JsUser);
 
