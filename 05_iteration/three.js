@@ -46,6 +46,6 @@ const myObject = {
 }
 
 for (const [key, value] of myObject) {
-    console.log(key, ':-', value);
+    // console.log(key, ':-', value);
 }
 // O/P=> error: myObject not iterable.
