@@ -1,10 +1,12 @@
 let score = "33"
 
 // console.log(typeof score);
-// console.log(typeof (score));
+// console.log(typeof (score));  
 
 let valueInNumber = Number(score)
 // console.log(valueInNumber);
+// console.log(typeof valueInNumber);
+
 
 
 // NOTE* 
@@ -45,13 +47,16 @@ let str3 = str1 + str2
 
 
 // console.log(true);
-// console.log(+true);   O/P-> 1
+// console.log(+true);   //O/P-> 1
+// console.log(false);
+// console.log(+false);   // OP-> 0
+
 
 let num1, num2, num3
 num1=num2=num3 = 2 + 2
 
 let gameCounter = 100
-// gameCounter++;   //101
+gameCounter++;   //101
 ++gameCounter;
 // console.log(gameCounter);
 
@@ -63,7 +68,7 @@ y = x++;
 //preIncrement
 let p = 9
 q = ++p;
-console.log(`p: ${p}, q:${q}`); // O/P-> p:10, q:10
+//console.log(`p: ${p}, q:${q}`); // O/P-> p:10, q:10
  
 
 
