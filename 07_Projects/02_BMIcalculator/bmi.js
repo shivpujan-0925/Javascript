@@ -1,35 +1,3 @@
-# Projects related to DOM
-
-## Projects-01 : Color changer
-### Solution code:
-```Javascript
-   const buttons = document.querySelectorAll('.button')
-const body = document.querySelector('body')
-
-buttons.forEach(function(button){
-  button.addEventListener('click', function(e){
-    if(e.target.id === 'grey'){
-      body.style.backgroundColor = e.target.id
-    }
-    if(e.target.id === 'white'){
-      body.style.backgroundColor = e.target.id
-    }
-    if(e.target.id === 'blue'){
-      body.style.backgroundColor = e.target.id
-    }
-    if(e.target.id === 'yellow'){
-      body.style.backgroundColor = e.target.id
-    }
-  })
-})
-
-
-```
-
-## Projects-02 : BMI Calculator
-### Solution Code:
-```Javascript
-  
 const form = document.querySelector('form')
 form.addEventListener('submit', function(e){
        e.preventDefault();
@@ -58,7 +26,3 @@ form.addEventListener('submit', function(e){
       }
 
 })
-
-
-
-```
