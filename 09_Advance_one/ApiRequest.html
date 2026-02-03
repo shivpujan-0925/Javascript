@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Document</title>
+
+       <style>
+              table{
+                   
+                     border-collapse: collapse;
+                     text-align: center;
+                     padding: 5px;
+                   
+              }
+              td,th{
+                     border: 1px solid black;
+              }
+
+             #card{
+                 height: 200px;
+                 width: 180px;
+                 position: relative;
+             }
+             #IMG{
+              position:relative;
+             }
+             
+            
+       </style>
+</head>
+
+<body style="background-color: #484444; color: #fff;">
+      <table>
+       <tr>
+        <th>Value</th>
+       <th>State</th>
+       <th>Description</th>
+       </tr>
+     
+   <tr>
+      <td>0</td>
+       <td>UNSENT</td>
+       <td>Client has been created. open() not called yet.</td>
+   </tr>
+   <tr>
+       <td>1</td>
+       <td>OPEND</td>
+       <td>open() has been called.</td>
+     </tr>
+      <tr>
+       <td>2</td>
+       <td>HEADERS_RECEIVED</td>
+       <td>send() has been called, and headers and status are available.</td>
+       
+      </tr>
+      <tr>
+       <td>3</td>
+       <td>LOADING</td>
+       <td>Downloading; responseText holds partial data.</td>
+      </tr>
+      <tr>
+       <td>4</td>
+       <td>DONE</td>
+       <td>	The operation is complete.</td>
+      </tr>
+      </table>
+
+      <hr>
+
+      <div id="card">
+         <img src="" id="IMG" alt="ProfileImg">
+         <h2 id="followers"></h2>
+      </div>
+
+</body>
+<script>
+       const card = document.querySelector('#card')
+       const avtar = document.querySelector('#IMG')
+       const followers = document.querySelector('#followers')
+
+
+       const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+       const xhr = new XMLHttpRequest()
+       xhr.open('GET', requestUrl)
+       xhr.onreadystatechange = function(){
+         console.log(xhr.readyState)
+         if(xhr.readyState === 4){
+              // const data = this.responseText
+              // console.log(typeof data)  => //string
+
+              const data = JSON.parse(this.responseText)
+              console.log(data)
+              // console.log(typeof data)  => //Objects
+              console.log(data.followers)
+              avtar.setAttribute('src', data.avatar_url);
+              followers.innerHTML = `Follower : ${data.followers}`
+         }
+      }
+       xhr.send()
+
+</script>
+</html>
