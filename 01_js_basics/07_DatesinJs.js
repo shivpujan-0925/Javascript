@@ -31,10 +31,14 @@ console.log(newDate.getMonth() + 1);
 
 
 //customizatiom
-newDate.toLocaleString('default', {
-       weekday:"long"
+let birthady = newDate.toLocaleString('default', {
+       weekday:"long",
+       year:"numeric",
+       month:"long",
+       day:"2-digit"
 })
 
+console.log(birthady);
 
 
 
