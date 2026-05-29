@@ -59,13 +59,12 @@ const user = {
     prices:199
 }
 
-function handleObject(anyObject){
-    console.log(`Username is ${anyObject.username} and price is ${anyObject.price}`);
-    
+function handleObject(anyObject) {
+    console.log(`name is ${anyObject.username} and money have ${anyObject.price}`)
 }
 // handleObject(user)
 handleObject({
-    username:"shanu",
+    username:"shivu",
     price:499
 })
 

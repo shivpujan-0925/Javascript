@@ -26,7 +26,7 @@ const obj4 = {5:"e", 6:"f"}
 // const obj3 = {obj1, obj2}
 // const obj3 = Object.assign({}, obj1, obj2, obj4)
 
-const obj3 = {...obj1, ...obj2, ...obj4}
+// const obj3 = {...obj1, ...obj2, ...obj4}
 // console.log(obj3);
 
 const Users = [
@@ -55,11 +55,11 @@ const Users = [
 // console.log(Users[1].username);
 
 // console.log(tinderUser);
-// console.log(Object.keys(tinderUser));   //array type
-// console.log(Object.values(tinderUser)); 
-// console.log(Object.entries(tinderUser)); 
+// console.log(Object.keys(tinderUser));   //array type   return key in array
+// console.log(Object.values(tinderUser));   // return values in array
+// console.log(Object.entries(tinderUser));   // return key and value in array for all 
 
-// console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+// console.log(tinderUser.hasOwnProperty('isLoggedIn'));   //check if property directly belongs to the objects( not inheritaed ) . 
 
 const course = {
     courseName :"JavaScript",
@@ -68,7 +68,7 @@ const course = {
 
 }
 
-// course.courseInstructor
+console.log(course.courseInstructor)
 
 
 //De-structuring
@@ -78,7 +78,7 @@ const {courseInstructor} = course
 
 const {courseInstructor:instructor} = course
 // console.log(courseInstructor);
-console.log(instructor);
+// console.log(instructor);
 
 
 
