@@ -1,8 +1,6 @@
 //Singleton
 // Object.create
 
-const { useReducer } = require("react")
-
 // Object Literal
 
 const mySym = Symbol("key1")
@@ -100,7 +98,7 @@ User.maskEmail = (email) => {
     return `${maskedEmail}@${domain}`;
 
 }
-User.maskEmail(User.email);
+// User.maskEmail(User.email);
 
 //freeze email
 Object.defineProperty(User, 'email', {
@@ -125,7 +123,39 @@ User.getInfo = function(){
     console.log(`Name: ${User.username} , email: ${User.maskEmail(User.email)}, age : ${User.age}, isPremium : ${User.isPremium} `)
 }
 
-User.getInfo();
+// User.getInfo();
+
+
+
+//task02: Product cart item
+
+const product = {
+    name: "red tape ",
+    price: 2000,
+    quantity: 2,
+    category: "shoes"
+}
+
+//total price of cart product
+product.totalPrice = function(){
+    const total_price = product.price * product.quantity;
+    return total_price;
+}
+console.log(product.totalPrice());
+
+//apply discount on product
+product.Discount = function(discount)  {
+    const discountPrice = (product.totalPrice()) * discount / 100;
+    return discountPrice;
+}
+console.log(product.Discount(20));
+
+//check lebel
+product.getLebel = function() {
+    console.log(`${product.name} , ${product.price}, ${product.category}`);
+}
+
+product.getLebel();
 
 
 
