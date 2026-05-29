@@ -1,6 +1,8 @@
 //Singleton
 // Object.create
 
+const { useReducer } = require("react")
+
 // Object Literal
 
 const mySym = Symbol("key1")
@@ -54,14 +56,76 @@ JsUser.greetingTwo = function(){
 
 }
 computer.name = "samsung glaxybook4";    
-console.log(computer.name);
-console.log(computer.owner);
+// console.log(computer.name);
+// console.log(computer.owner);
 
 // Object.freeze(computer.owner);   //Not works ? why  : owner is a simple string , Not a objects
-Object.freeze(computer)    //it works and [completely locked all properties inside  computer objects]
-computer.owner = "shivu"   //Not change becoz objects are freezed
-console.log(computer)
+// Object.freeze(computer)    //it works and [completely locked all properties inside  computer objects]
+// computer.owner = "shivu"   //Not change becoz objects are freezed
+// console.log(computer)
 
+//task : write a code , to greet person who's owner of the computer 
+
+ computer.greet = function(owner){
+   
+    if(owner == computer.owner) {
+        console.log(`Welcome to the world of algorithm! , ${computer.owner}`);
+    }else {
+        console.log("access denied");
+    }
+   
+}
+
+// computer.greet("radhe")
+
+//task1: User profile manager
+
+const User = {
+    username : "shivu",
+    email: "shivu@google.com",
+    age : 20,
+    isPremium : false
+}
+
+//masking email
+User.maskEmail = (email) => {
+    const [username, domain] = email.split('@');
+
+    if(username.length < 2) {
+        return `${username[0]}@${domain}`;
+
+    }
+
+    const maskedEmail = username[0]+ "*".repeat(username.length-2) + username.slice(-1);
+    return `${maskedEmail}@${domain}`;
+
+}
+User.maskEmail(User.email);
+
+//freeze email
+Object.defineProperty(User, 'email', {
+    value:"User.email",
+    writable:false,
+    configurable:false
+})
+
+
+//change premium
+User.changePremium = function(){
+    // if(User.isPremium == false){
+    //     User.isPremium = true;
+    // }else{
+    //     User.isPremium = false
+    // }
+
+    User.isPremium = !User.isPremium;   //flip
+}
+
+User.getInfo = function(){
+    console.log(`Name: ${User.username} , email: ${User.maskEmail(User.email)}, age : ${User.age}, isPremium : ${User.isPremium} `)
+}
+
+User.getInfo();
 
 
 
