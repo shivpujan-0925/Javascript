@@ -26,7 +26,7 @@ function One(){
     two();
     
 }
-// One();
+One();
 
 if(true){
     const username = "radhe"
@@ -45,15 +45,17 @@ if(true){
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++ Interesting +++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-// console.log(addOne(6));
+// console.log(addOne(6));   // calling function , before declaration => not giving any err here.
 
 function addOne(num){
      return num + 1
 
 }
 
-// addTwo(7);
-const addTwo = function(num){
+
+
+// addTwo(7);     // calling function , before declaration of function => here occures error. why ?  
+const addTwo = function(num){      //here , function declared and hold in a variable. 
     return num + 2
 
 }
