@@ -45,7 +45,7 @@ if(true){
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++ Interesting +++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-// console.log(addOne(6));   // calling function , before declaration => not giving any err here.
+// console.log(addOne(6));   // calling function , before declaration => not giving any err here. REASON : the function addOne , fully hoisted by javascript at the top of the memory. 
 
 function addOne(num){
      return num + 1
@@ -54,7 +54,9 @@ function addOne(num){
 
 
 
-// addTwo(7);     // calling function , before declaration of function => here occures error. why ?  
+// addTwo(7);     // calling function , before declaration of function => here occures error. why ?  REASON: only "const addTwo" is hoisted at the top of memory NOT function. and this is the reason to gives err when calling to the function
+
+
 const addTwo = function(num){      //here , function declared and hold in a variable. 
     return num + 2
 
