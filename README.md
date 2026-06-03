@@ -1,2 +1,3 @@
 # Javascript
-learning javascript from chai aur code youtube channel.
+## instructor ~ Hitesh chaudhary [chai aur code]
+

@@ -6,13 +6,13 @@ let a = 300
 if(true){
    let a = 10
    const b = 20
-//    console.log("INNER:", a);
+   console.log("INNER:", a);
    
 }
 
 
 // console.log(a);
-// console.log(b);
+// console.log(b);       //not accessible : b'coz  "b" define in the inner part of function , and not accessible from outer.
 // console.log(c);
 
 function One(){
@@ -45,14 +45,14 @@ if(true){
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++ Interesting +++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-console.log(addOne(6));
+// console.log(addOne(6));
 
 function addOne(num){
      return num + 1
 
 }
 
-addTwo(7);
+// addTwo(7);
 const addTwo = function(num){
     return num + 2
 
