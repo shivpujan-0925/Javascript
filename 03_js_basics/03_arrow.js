@@ -12,16 +12,16 @@ const user = {
 // user.username = "sam"
 // user.welcomeMessage()
 
-// console.log(this);
+// console.log(this);       //Output - {}   [ in node]
 
 
 
-// function chai(){
-//    let username = "radhe"
-//    console.log(this.username);
+function chai(){
+   let username = "radhe"
+   console.log(this.username);            //output - undefined. why? 
 
-// }
-// chai()
+}
+chai()
 
 // const chai = function(){
 //    let username = "radhe"
@@ -30,12 +30,12 @@ const user = {
 // chai()
 
 
-const chai = () => {
-   let username = "radhe"
-   console.log(this.username);
-   console.log(this);
+// const chai = () => {
+//    let username = "radhe"
+//    console.log(this.username);
+//    console.log(this);
    
-}
+// }
 // chai()
 
 
@@ -49,6 +49,6 @@ const chai = () => {
 // const addTwo = (num1, num2)=> num1 + num2     //implicit return
 //  const addTwo = (num1, num2)=> (num1 + num2)
 
- const addTwo = (num1, num2)=> ({username:"radhe"})
+ const addTwo = (num1, num2)=> ({username:"radhe"})    // need to wrap in ()
 
-console.log(addTwo(3,4));
+// console.log(addTwo(3,4));
