@@ -9,6 +9,6 @@
 
 
 ( (name) => {
-    console.log(`DB CONNECTED TO ${name}`);
+    console.log(`DB CONNECTED TO ${name}.`);
     
-})("System")
+})("SYSTEM")
