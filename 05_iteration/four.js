@@ -24,7 +24,7 @@ map.set('USA', "United states of america")
 map.set('FR', "France")
 map.set('IN', "India")
 
-for (const key in map) {       //NOT iterable
+for (const key in map) {       //NOT iterable Why?   [ for in => property based iteration]
 
     console.log(map);
     
