@@ -11,9 +11,12 @@ const coding = ["js", "ruby", "cpp", "python", "java"]
 const myNums = [1,2,3,4,5,6,7,8,9,10]
 // const newNums = myNums.filter( (num) => num > 4)
 
-// const newNums = myNums.filter( (num) => {    //if use curly braces( scope) the use return keyword.
+// const newNums = myNums.filter( (num) => {    //if use curly braces( scope) then use return keyword.
 //     return num > 4
 // })
+
+
+//Other ways
 
 // const newNums = []
 // myNums.forEach( (num)=> {
