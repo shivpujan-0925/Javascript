@@ -30,7 +30,11 @@ if (userEmail) {
 
 
 
-// #Nullis coalescing Operator( ??): null undefined
+// #Nullish coalescing Operator( ??): null, undefined
+//syntax:  leftValue ?? rightvalue 
+
+// this (??) operator return rightValue if leftValue is null , undefined otherwise return rightValue.
+
 
 let val1;
 // val1 = 5 ?? 10
@@ -39,7 +43,7 @@ let val1;
 
 val1 = null ?? 10 ?? 20
 
-// console.log(val1);
+console.log(val1);
 
 // #Terniary Operator:
 
