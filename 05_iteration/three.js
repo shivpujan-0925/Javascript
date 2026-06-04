@@ -30,13 +30,13 @@ map.set('IN', "India")
 
 // console.log(map);
 
-// for (const key of map) {
+// for (const key of map) {   //without destructuring.
 //     console.log(key);
     
 // }
  
-for (const [key, value] of map) {       //Destructuring
-    // console.log(key, ':-', value);
+for (const [key, value] of map) {       //Destructuring.
+    console.log(key, ':-', value);
     
 }
 
@@ -45,7 +45,7 @@ const myObject = {
     game2:'spiderman'
 }
 
-for (const [key, value] of myObject) {
+// for (const [key, value] of myObject) {   [for of => Value-based iteration]
     // console.log(key, ':-', value);
-}
+// }
 // O/P=> error: myObject not iterable.
