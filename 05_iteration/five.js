@@ -1,10 +1,8 @@
-const coding = ["js", "ruby", "cpp", "python", "java"]
+const coding = ["js", "python", "java", "cpp", "ruby"]
 
-// coding.forEach( function (item){
-//    console.log(item);
-   
-// })
-
+coding.forEach(  function (lang){ 
+    // console.log(lang);
+})
 
 // coding.forEach( (val)=>{
 //    console.log(val);
@@ -12,12 +10,12 @@ const coding = ["js", "ruby", "cpp", "python", "java"]
 // })
 
 
-// function printMe(item){
-//   console.log(item);
+function printMe(item){
+  console.log(item);
   
-// }
+}
 
-// coding.forEach(printMe)
+coding.forEach(printMe)
 
 // coding.forEach((item, index, arr)=>{
 //     console.log(item, index, arr);
@@ -41,6 +39,6 @@ const myCoding = [
 ]
 
 myCoding.forEach( (item)=>{
-    console.log(item.LanguageName);
+    // console.log(item.LanguageName);
     
 })
