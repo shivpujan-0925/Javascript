@@ -11,39 +11,43 @@
        </ul>
 </body>
 <script>
-       function addLanguage(langName){
-          const li = document.createElement('li');
-          li.innerHTML = `${langName}`;
-          document.querySelector('.language').appendChild(li)
-          
+       function addLanguage(LanguageName) {
+            const li = document.createElement("li")
+            li.innerHTML = `${LanguageName}`
+
+            document.querySelector('.language').appendChild(li)
        }
-       addLanguage('Python');
-       addLanguage('Java');
+       addLanguage("Python")
+       addLanguage("Typescript")
 
-    //optimized way
+       //optimized way
+       function addOptiLanguage(langName){
+              const li = document.createElement('li')
+              // const addText = document.createTextNode(langName)
+              // li.appendChild(addText)
 
-       function addOptLanguage(langName){
-             const li = document.createElement('li');
-             li.appendChild(document.createTextNode(langName));
-             document.querySelector('.language').appendChild(li)
+              li.appendChild(document.createTextNode(langName))
+              document.querySelector('.language').appendChild(li)
        }
-       addOptLanguage('golange');
-       
+       addOptiLanguage("Java")
+       addOptiLanguage("Cpp")
 
- //Edit
-    const secondLang = document.querySelector('li:nth-child(2)');
-  //     secondLang.innerHTML = "Mojo"
-     const newLi = document.createElement('li');
-     newLi.textContent = "SQL"
-     secondLang.replaceWith(newLi)
+       //Edit
+     const seocondLang =  document.querySelector('li:nth-child(2)');
+//      seocondLang.innerHTML = "MOJO";
+
+     const newLi =  document.createElement('li');
+     newLi.textContent = "Mojo"
+     seocondLang.replaceWith(newLi)
 
      //Edit
-     const firstLang = document.querySelector('li:first-child')
-     firstLang.outerHTML="<li>Typescript</li>"
+     const firstLang = document.querySelector('li:first-child');
+     firstLang.outerHTML = "<li>Typescript</li>"
 
-     //Edit
-      const lastLang = document.querySelector('li:last-child')
-      lastLang.remove()
+     //remove
+     const lastLang = document.querySelector("li:last-child")
+     lastLang.remove()
+
 
 </script>
 </html>
