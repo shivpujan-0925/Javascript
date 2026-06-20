@@ -65,7 +65,9 @@
       //attachedEvent()
       //jQuery
 
-      //Event propogation: 1)event  Bubbling[use false OR default ], 2) event capturing.[use true, after function]
+      //Event propogation: 1)event  Bubbling[use false OR default ] ==> inner To outer, 2) event capturing.[use true, after function] ==> Outer To inner.
+
+      //stopPropagation() -> use to stop event bubbling.
 
       //Learn These events=>
 
@@ -74,42 +76,42 @@
       // clientX, clientY, screenX, screenY,
       //altkey, ctrlkey, shiftkey, keyCode
 
-//        document.getElementById("images").addEventListener(
-//         "click",
-//         function (e) {
-//           console.log("Clicked inside ul");
-//         },
-//         false
-//       );
 
-//        document.getElementById("owl").addEventListener(
-//         "click",
-//         function (e) {
-//           console.log("Clicked owl");
-//           e.stopPropagation();
-//         },
-//         false
-//       );
+      // document.getElementById('images').addEventListener('click', function(e){
+      //          console.log("clicked inside ul");
+      // },false)
+   
+      // document.getElementById('owl').addEventListener('click', function(e){
+      //    console.log("owl clicked");
+      //    e.stopPropagation();
+      // },false)
+
+      // document.getElementById('google').addEventListener('click', function(e){
+      //   e.preventDefault()
+      //   e.stopPropagation()
+      //   console.log("google clicked");
+        
+      // })
+   
+
+//________________________________________________________________________________________________________________________________
+   
+      document.querySelector("#images").addEventListener('click', function(e){
+            //  console.log(e.target.parentNode);
+             console.log(e.target.tagName);
+
+             let removeIt = e.target.parentNode;
+             if(e.target.tagName === 'IMG'){
+              console.log(e.target.id);
+              
+              removeIt.remove();
+             }
+               
 
 
-//       document.getElementById('google').addEventListener('click', function(e){
-//        e.preventDefault();
-//        e.stopPropagation();
-//        console.log("google clicked");
-//       }, false)
-
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-document.querySelector('#images').addEventListener('click', function(e){
-       
-
-       if(e.target.tagName === 'IMG'){
-
-          let removeIt = e.target.parentNode
-          removeIt.remove();
-       }
-       
-  }, false)
+            //  removeIt.parentNode.removeChild(removeIt)
+             
+      })
 
 
       </script>
