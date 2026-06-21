@@ -10,26 +10,26 @@
        <button id="stop">stop</button>
 </body>
 <script>
-       const sayRadhe = function(){
-              console.log("Radhe");
-       }
+  const sayRadhe = function(){
+       console.log("radhe")
+  }
+  //   setTimeout(sayRadhe, 2000)
 
-       const changeText = function(){
-              
-            document.querySelector('h1').innerHTML = " Best JS Course"
-       }
+  const changedTitle = document.querySelector('h1');
+   const changeText = function(){
+         changedTitle.innerHTML = "Best Javascript series on Youtube.";
+   }
 
-      const changeMe = setTimeout(changeText, 2000)
+  const changeMe = setTimeout(changeText, 2000);
+   
+ document.querySelector('#stop').addEventListener('click', function(e){
+       clearTimeout(changeMe)
+       console.log(" STOPPED")
 
-      const stopTimeout = document.querySelector("#stop")
-      stopTimeout.addEventListener('click',function(){
-           clearTimeout(changeMe)
-           console.log("Stopped");
-           
-      })
-      
 
-      
+ })
+
+  
 </script>
 
 </html>
