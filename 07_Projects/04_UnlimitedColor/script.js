@@ -1,35 +1,46 @@
-const Start = document.querySelector('#start');
-const Stop = document.querySelector('#stop');
+const HEX_CHARS  = '0123456789ABCDEF'
+const INTERVAL_MS = 1000;
+let intervalId = null;
 
-const randomColor = function () {
-  let hex = '0123456789ABCDEF';
+//generate random color 
+const randomColor = function(){
+  
   let color = '#';
 
-  for (let i = 0; i < 6; i++) {
-    color += hex[Math.floor(Math.random() * 16)];
+  for(let i = 0; i < 6; i++){
+    color += HEX_CHARS[Math.floor(Math.random() * 16)];
+    
   }
   return color;
-};
+}
 
-// console.log(randomColor())
-
-let intervalId;
-
-const changeBgColor = function () {
+//CHANGE BACKGROUND
+const changeBg = () => {
   document.body.style.backgroundColor = randomColor();
 }
 
-const startChangingColor = function () {
+//startChangingBg
+const startChangingBg = () => {
+  if(intervalId) return;
+  intervalId = setInterval(changeBg,INTERVAL_MS)
+}
 
-  if(!intervalId){
-       intervalId = setInterval(changeBgColor,1000)
+const start = document.querySelector('#start')
+  if(start){
+    start.addEventListener('click', startChangingBg);
   }
-};
 
-Start.addEventListener('click', startChangingColor);
+//stopChangingBg
+const stopChangingBg = () => {
+  if(intervalId){
+    clearInterval(intervalId)
+    intervalId = null;
+  }
+}
 
-const stopChangingColor = function () {
-   clearInterval(intervalId);
-   intervalId = null;
-};
-Stop.addEventListener('click', stopChangingColor);
+const stop = document.querySelector('#stop')
+if(stop){
+  stop.addEventListener('click', stopChangingBg)
+}
+
+
