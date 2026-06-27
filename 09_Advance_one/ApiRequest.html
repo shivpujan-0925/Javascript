@@ -69,35 +69,51 @@
       <hr>
 
       <div id="card">
-         <img src="" id="IMG" alt="ProfileImg">
+         <img src="" id="IMG" alt="ProfileImg" style="height: 200px;"> 
+          <h1 id="name"></h1>
          <h2 id="followers"></h2>
+         <h2 id="repoCount"></h2>
       </div>
 
 </body>
 <script>
-       const card = document.querySelector('#card')
-       const avtar = document.querySelector('#IMG')
-       const followers = document.querySelector('#followers')
+       const profileImage = document.querySelector("#IMG");
+       const followerCount = document.querySelector("#followers");
+       const repoCount = document.querySelector("#repoCount")
+       const name = document.querySelector("#name");
 
 
-       const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
-       const xhr = new XMLHttpRequest()
-       xhr.open('GET', requestUrl)
-       xhr.onreadystatechange = function(){
-         console.log(xhr.readyState)
-         if(xhr.readyState === 4){
-              // const data = this.responseText
-              // console.log(typeof data)  => //string
+       const requestUrl = "https://api.github.com/users/shivpujan-0925"
 
+      const xhr = new XMLHttpRequest()
+      xhr.open('GET', requestUrl)
+
+      xhr.onreadystatechange = function(){
+       console.log(xhr.readyState);
+       if(xhr.readyState == 4){
               const data = JSON.parse(this.responseText)
-              console.log(data)
-              // console.log(typeof data)  => //Objects
-              console.log(data.followers)
-              avtar.setAttribute('src', data.avatar_url);
-              followers.innerHTML = `Follower : ${data.followers}`
-         }
+              
+              console.log(data);
+              // console.log(data.public_repos);
+              // console.log(data.followers);
+
+              
+
+              //creating github profile card
+
+              profileImage.setAttribute('src', data.avatar_url )
+              name.innerHTML = data.name;
+              followerCount.innerHTML = `Followers : ${data.followers}`
+              repoCount.innerHTML = `Total repos : ${data.public_repos}`
+
+
+
+              
+              
+       }
+       
       }
-       xhr.send()
+      xhr.send()
 
 </script>
 </html>
