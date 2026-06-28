@@ -54,6 +54,3 @@ console.log(userOne.constructor);
      //step2- call a Contsructor function due to 'new' keyword.
      //step3- inject all arguments and ... in object
      //step4- deliver in function
-
-
-
